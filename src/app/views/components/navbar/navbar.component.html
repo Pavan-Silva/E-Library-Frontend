@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <button class="navbar-logo" mat-icon-button>
+    <img ngSrc="assets/logo.png" alt="" height="512" width="512">
+  </button>
+
+  <span class="navbar-title">eLibrary</span>
+
+  <button class="navbar-menu-button" mat-button [matMenuTriggerFor]="menu" style="margin-top: 3px">
+    <mat-icon class="navbar-logo" iconPositionEnd>arrow_drop_down</mat-icon>
+    Discover
+  </button>
+
+  <mat-menu #menu="matMenu" class="mat-elevation-z1">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+
+  <span class="navbar-spacer"></span>
+
+  <button class="navbar-menu-button" mat-stroked-button>
+    <mat-icon>login</mat-icon>
+    Sign in
+  </button>
+</mat-toolbar>
