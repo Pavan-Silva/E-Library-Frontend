@@ -1,3 +1,46 @@
-<div class="banner">
-  <img ngSrc="assets/covers.jpg" height="769" width="1951" alt="banner">
+<div class="banner-container">
+  <div class="banner">
+    <img ngSrc="assets/covers.jpg" height="769" width="1951" alt="banner">
+  </div>
+
+  <div class="banner-text">
+    <h1>Lots of E-Books 100% Free</h1>
+    <p>Everything you need for better future and success has already been written. And guess what? All you have to do is go to the library.</p>
+  </div>
+</div>
+
+<div class="card-container">
+  <div class="header-topic">
+    <div class="title">
+      <h2>Browse Genres</h2>
+
+      <button mat-icon-button>
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <mat-grid-list cols="4" rowHeight="1:1" gutterSize="30px">
+    <mat-grid-tile>1</mat-grid-tile>
+    <mat-grid-tile>2</mat-grid-tile>
+    <mat-grid-tile>3</mat-grid-tile>
+    <mat-grid-tile>4</mat-grid-tile>
+  </mat-grid-list>
+
+  <div class="header-topic">
+    <div class="title">
+      <h2>Trending Books</h2>
+
+      <button mat-icon-button>
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <mat-grid-list cols="4" rowHeight="1:1" gutterSize="30px">
+    <mat-grid-tile>1</mat-grid-tile>
+    <mat-grid-tile>2</mat-grid-tile>
+    <mat-grid-tile>3</mat-grid-tile>
+    <mat-grid-tile>4</mat-grid-tile>
+  </mat-grid-list>
 </div>

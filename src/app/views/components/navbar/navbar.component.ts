@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {HomeComponent} from "../../pages/home/home.component";
 
 @Component({
   selector: 'app-navbar',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  protected readonly HomeComponent = HomeComponent;
 }
