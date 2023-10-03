@@ -1,6 +1,6 @@
 <div class="banner-container">
   <div class="banner">
-    <img ngSrc="assets/covers.jpg" height="769" width="1951" alt="banner">
+    <img [ngSrc]="'assets/covers.jpg'" height="769" width="1951" alt="banner" priority="high">
   </div>
 
   <div class="banner-text">
@@ -12,7 +12,7 @@
 <div class="card-container">
   <div class="header-topic">
     <div class="title">
-      <h2>Trending Books</h2>
+      <h2>Browse Books</h2>
 
       <button mat-icon-button>
         <mat-icon>arrow_forward</mat-icon>
@@ -20,13 +20,9 @@
     </div>
   </div>
 
-  <mat-grid-list cols="7" rowHeight="1:1.25" gutterSize="30px">
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile>2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
-    <mat-grid-tile>5</mat-grid-tile>
-    <mat-grid-tile>6</mat-grid-tile>
-    <mat-grid-tile>7</mat-grid-tile>
+  <mat-grid-list cols="7" rowHeight="0.7:1" gutterSize="30px">
+    <mat-grid-tile class="mat-elevation-z9" *ngFor="let book of bookList">
+      <img [src]="'data:image/jpeg;base64,'+book.coverImage" alt="cover_img"/>
+    </mat-grid-tile>
   </mat-grid-list>
 </div>

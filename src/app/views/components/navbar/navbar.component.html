@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <button class="navbar-logo" mat-icon-button routerLink="/home">
-    <img ngSrc="assets/logo.png" alt="" height="512" width="512">
+    <img ngSrc="assets/logo.png" alt="" height="512" width="512" priority="high"/>
   </button>
 
   <span class="navbar-title">eLibrary</span>
@@ -16,13 +16,13 @@
   </mat-menu>
 
   <input type="text" placeholder="Search" required>
-  <button class="search-btn">
+  <button class="search-btn" routerLink="/results">
     <mat-icon>search</mat-icon>
   </button>
 
   <span class="navbar-spacer"></span>
 
-  <button class="navbar-button" mat-stroked-button (click)="openDialog()">
+  <button class="navbar-button" (click)="openDialog()">
     <mat-icon>person</mat-icon>
     Sign in
   </button>

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {MatDialogRef} from "@angular/material/dialog";
 import {AuthService} from "../../../services/auth/auth.service";
 import {TokenStorageService} from "../../../services/auth/token-storage.service";
 
@@ -9,9 +8,7 @@ import {TokenStorageService} from "../../../services/auth/token-storage.service"
   styleUrls: ['./login-dialog.component.scss'],
 })
 export class LoginDialogComponent {
-  constructor(public dialogRef: MatDialogRef<LoginDialogComponent>,
-              private authService: AuthService,
-              private tokenStorage: TokenStorageService) {}
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) {}
 
   isSuccessful = false;
   isFailed = false;
@@ -22,6 +19,11 @@ export class LoginDialogComponent {
     password: null
   };
 
+  data: any = {
+    accessToken: null,
+    refreshToken: null
+  }
+
   onSubmit() {
     const {username , password} = this.form;
 
@@ -30,10 +32,16 @@ export class LoginDialogComponent {
     this.authService.login(username, password).subscribe (
       {
         next: response => {
-          //this.tokenStorage.saveToken(response.accessToken, response.refreshToken);
+          this.data.accessToken = response.accessToken;
+          this.data.refreshToken = response.refreshToken;
+
+          this.tokenStorage.saveToken(this.data);
+
           this.isSuccessful = true;
           this.isFailed = false;
           this.isPending = false;
+
+          this.reloadPage();
         },
 
         error: () => {
@@ -43,5 +51,9 @@ export class LoginDialogComponent {
         }
       }
     );
+  }
+
+  reloadPage(): void {
+    window.location.reload();
   }
 }

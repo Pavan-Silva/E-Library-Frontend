@@ -19,6 +19,21 @@
 
 .navbar-button {
   font-size: 1em;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.navbar-button:last-of-type {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 4px;
+  padding: 5px 10px;
+
+  mat-icon {
+    margin-right: 3px;
+  }
 }
 
 input {
@@ -26,11 +41,12 @@ input {
   border-radius: 4px 0 0 4px;
   margin-left: 1.5vw;
   padding: 3px 10px;
-  background-color: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(98, 97, 97, 0.78);
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   border-right: none;
   outline: none;
   font-size: 0.9em;
+  color: white;
 }
 
 .search-btn {
@@ -38,7 +54,7 @@ input {
   color: white;
   border-radius: 0 4px 4px 0;
   background-color: #39a28c;
-  border: 1px solid rgba(98, 97, 97, 0.78);
+  border: 1px solid rgba(98, 97, 97, 0.47);
   border-left: none;
   cursor: pointer;
 }

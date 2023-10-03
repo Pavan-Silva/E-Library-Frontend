@@ -1,7 +1,7 @@
 @use '@angular/material' as mat;
 @include mat.core();
 
-$E-Library-Frontend-primary: mat.define-palette(mat.$red-palette, 700);
+$E-Library-Frontend-primary: mat.define-palette(mat.$grey-palette, 900);
 $E-Library-Frontend-accent: mat.define-palette(mat.$teal-palette, 500);
 $E-Library-Frontend-warn: mat.define-palette(mat.$red-palette);
 

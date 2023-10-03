@@ -17,6 +17,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import { LoginDialogComponent } from './views/components/login-dialog/login-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { SearchResultsComponent } from './views/pages/search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     NavbarComponent,
     HomeComponent,
     LoginDialogComponent,
+    SearchResultsComponent,
   ],
     imports: [
         BrowserModule,
