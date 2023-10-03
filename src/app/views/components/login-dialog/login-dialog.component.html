@@ -1,0 +1,26 @@
+<form name="form" (submit)="onSubmit()">
+  <div class="form-group">
+    <h2>Sign in to Download</h2>
+    <p>Don't have an account? <a routerLink="/register">Register</a></p>
+
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="E-Mail" name="email" [(ngModel)]="form.username">
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Password" name="password" [(ngModel)]="form.password">
+      <mat-icon matSuffix>key</mat-icon>
+    </mat-form-field>
+
+    <input class="checkbox" type="checkbox" checked>
+    <mat-label>Remember me</mat-label>
+
+    <button mat-flat-button color="primary">Sign in</button>
+
+    <mat-label *ngIf="isFailed">
+      <mat-icon>error_outline</mat-icon>
+      Login Failed
+    </mat-label>
+  </div>
+</form>

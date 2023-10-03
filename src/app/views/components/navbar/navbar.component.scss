@@ -20,3 +20,25 @@
 .navbar-button {
   font-size: 1em;
 }
+
+input {
+  height: 50%;
+  border-radius: 4px 0 0 4px;
+  margin-left: 1.5vw;
+  padding: 3px 10px;
+  background-color: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(98, 97, 97, 0.78);
+  border-right: none;
+  outline: none;
+  font-size: 0.9em;
+}
+
+.search-btn {
+  height: 64%;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  background-color: #39a28c;
+  border: 1px solid rgba(98, 97, 97, 0.78);
+  border-left: none;
+  cursor: pointer;
+}
