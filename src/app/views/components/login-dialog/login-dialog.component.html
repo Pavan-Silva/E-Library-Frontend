@@ -16,8 +16,9 @@
     <input class="checkbox" type="checkbox" checked>
     <mat-label>Remember me</mat-label>
 
-    <button  mat-flat-button color="primary" *ngIf="!isPending">Sign in</button>
-    <mat-spinner *ngIf="isPending" color="primary"></mat-spinner>
+    <button mat-flat-button color="accent" *ngIf="!isPending">Sign in</button>
+
+    <mat-spinner *ngIf="isPending" color="accent"/>
 
     <mat-label *ngIf="isFailed">
       <mat-icon>error_outline</mat-icon>

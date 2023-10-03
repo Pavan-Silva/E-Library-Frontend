@@ -10,14 +10,21 @@ import {Book} from "../../../dto/book";
 export class HomeComponent implements OnInit {
 
   bookList: Book[] =[];
+  isFailed= false;
+  isPending = true;
 
   constructor(private bookService: BookService) {}
 
   ngOnInit(): void {
-    this.bookService.getBookList().subscribe (
-      data => {
-        this.bookList = data;
+    this.bookService.getBookList().subscribe ({
+      next: data => {
+        this.bookList = data.slice(0,7);
+        this.isPending = false;
+
+      }, error: () => {
+        this.isFailed = true;
+        this.isPending = false;
       }
-    );
+    });
   }
 }

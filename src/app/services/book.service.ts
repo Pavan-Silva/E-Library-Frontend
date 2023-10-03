@@ -18,4 +18,8 @@ export class BookService {
   getBookById(id: number): Observable<any> {
     return this.http.get(API_URL + '/' + id);
   }
+
+  search(query:string): Observable<any> {
+    return this.http.get(API_URL + '/search?query=' + query);
+  }
 }

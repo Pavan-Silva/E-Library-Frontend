@@ -1,6 +1,6 @@
 <div class="banner-container">
   <div class="banner">
-    <img [ngSrc]="'assets/covers.jpg'" height="769" width="1951" alt="banner" priority="high">
+    <img [ngSrc]="'assets/covers.jpg'" alt="banner" priority="high" width="1920" height="782">
   </div>
 
   <div class="banner-text">
@@ -9,7 +9,7 @@
   </div>
 </div>
 
-<div class="card-container">
+<div class="card-container" *ngIf="!isFailed">
   <div class="header-topic">
     <div class="title">
       <h2>Browse Books</h2>
@@ -25,4 +25,15 @@
       <img [src]="'data:image/jpeg;base64,'+book.coverImage" alt="cover_img"/>
     </mat-grid-tile>
   </mat-grid-list>
+
+  <mat-spinner color="accent" *ngIf="isPending"/>
 </div>
+
+<div class="content">
+
+</div>
+
+<label class="error" *ngIf="isFailed">
+  <mat-icon>error_outline</mat-icon>
+  Connection to the server failed.
+</label>

@@ -1,24 +1,26 @@
 <mat-toolbar color="primary">
   <button class="navbar-logo" mat-icon-button routerLink="/home">
-    <img ngSrc="assets/logo.png" alt="" height="512" width="512" priority="high"/>
+    <img [ngSrc]="'assets/logo.png'" alt="" height="512" width="512" priority="high"/>
   </button>
 
   <span class="navbar-title">eLibrary</span>
 
-  <button class="navbar-button" mat-button [matMenuTriggerFor]="menu" style="margin-top: 3px">
-    <mat-icon class="navbar-logo" iconPositionEnd>arrow_drop_down</mat-icon>
-    Discover
-  </button>
+<!--  <button class="navbar-button" mat-button [matMenuTriggerFor]="menu" style="margin-top: 3px">-->
+<!--    <mat-icon class="navbar-logo" iconPositionEnd>arrow_drop_down</mat-icon>-->
+<!--    Discover-->
+<!--  </button>-->
 
-  <mat-menu #menu="matMenu" class="mat-elevation-z1">
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu>
+<!--  <mat-menu #menu="matMenu" class="mat-elevation-z1">-->
+<!--    <button mat-menu-item>Adventure</button>-->
+<!--    <button mat-menu-item></button>-->
+<!--  </mat-menu>-->
 
-  <input type="text" placeholder="Search" required>
-  <button class="search-btn" routerLink="/results">
-    <mat-icon>search</mat-icon>
-  </button>
+  <div class="search">
+    <input type="text" placeholder="Search" required [(ngModel)]="txtSearch">
+    <button (click)="search()">
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
 
   <span class="navbar-spacer"></span>
 

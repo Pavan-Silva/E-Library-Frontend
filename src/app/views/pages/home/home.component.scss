@@ -1,3 +1,5 @@
+@import "../../../colors";
+
 .banner-container {
   overflow: hidden;
   display: flex;
@@ -13,19 +15,17 @@
     width: 45vw;
     position: absolute;
     text-align: center;
+    text-shadow: 0 2px $matte-black;
 
     h1 {
-      font-size: 3em;
-      color: #f3ece7;
+      font-size: 3.5em;
+      color: white;
+      mix-blend-mode: difference;
     }
 
     p {
       font-size: 1.4em;
-      color: rgba(243, 236, 231, 0.88);
-    }
-
-    h1, p {
-      text-shadow: 3px 2px rgba(79, 77, 77, 0.58);
+      color: white;
     }
   }
 }
@@ -43,7 +43,7 @@
 
       button {
         margin-left: 10px;
-        background-color: rgba(189, 189, 189, 0.45);
+        background-color: $grey-background;
         transform: scale(0.9);
       }
     }
@@ -72,5 +72,25 @@
         transition: transform .2s;
       }
     }
+  }
+
+  mat-spinner {
+    transform: scale(0.5);
+    margin: 0 auto;
+  }
+}
+
+.error{
+  font-size: 1.2em;
+  color: $warn;
+  display: flex;
+  width: 100%;
+  height: 40%;
+  justify-content: center;
+  align-items: center;
+
+  mat-icon {
+    margin-right: 10px;
+    transform: scale(1.2);
   }
 }

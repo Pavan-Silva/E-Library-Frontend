@@ -1,3 +1,5 @@
+@import "../../../colors";
+
 .navbar-spacer {
   flex: 1 1 auto;
 }
@@ -20,14 +22,14 @@
 .navbar-button {
   font-size: 1em;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.86);
+  color: $faded-white;
 }
 
 .navbar-button:last-of-type {
   display: flex;
   align-items: center;
   background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.34);
+  border: 1px solid $faded-grey-outline;
   border-radius: 4px;
   padding: 5px 10px;
 
@@ -36,25 +38,49 @@
   }
 }
 
-input {
-  height: 50%;
-  border-radius: 4px 0 0 4px;
-  margin-left: 1.5vw;
-  padding: 3px 10px;
-  background-color: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  border-right: none;
-  outline: none;
-  font-size: 0.9em;
-  color: white;
+.navbar-button:last-of-type:active {
+  background-color: white;
+  color: $matte-black;
 }
 
-.search-btn {
-  height: 64%;
-  color: white;
-  border-radius: 0 4px 4px 0;
-  background-color: #39a28c;
-  border: 1px solid rgba(98, 97, 97, 0.47);
-  border-left: none;
-  cursor: pointer;
+.search {
+  display: flex;
+  height: 60%;
+
+  input {
+    border-radius: 4px 0 0 4px;
+    margin-left: 1.5vw;
+    padding: 3px 10px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid $faded-grey-outline;
+    border-right: none;
+    outline: none;
+    font-size: 0.9em;
+    color: white;
+  }
+
+  button {
+    color: white;
+    border-radius: 0 4px 4px 0;
+    background-color: $teal-green;
+    border: 1px solid $faded-grey-outline;
+    border-left: none;
+    cursor: pointer;
+  }
+
+  button:active {
+    background-color: white;
+    color: $matte-black;
+  }
+}
+
+.search:focus-within {
+
+  input {
+    border-color: white;
+  }
+
+  button {
+    border-color: white;
+  }
 }

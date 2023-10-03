@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {LoginDialogComponent} from "../login-dialog/login-dialog.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -9,9 +10,17 @@ import {LoginDialogComponent} from "../login-dialog/login-dialog.component";
 })
 export class NavbarComponent {
 
-  constructor(public dialog: MatDialog) {}
+  txtSearch = '';
+
+  constructor(public dialog: MatDialog, private router:Router) {}
 
   openDialog() {
     this.dialog.open(LoginDialogComponent);
+  }
+
+  search() {
+    if (this.txtSearch != '') {
+      this.router.navigate(['/search'],{queryParams: {query: this.txtSearch}});
+    }
   }
 }
