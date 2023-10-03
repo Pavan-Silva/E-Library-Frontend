@@ -30,6 +30,11 @@
     margin: 20px 0;
   }
 
+  mat-spinner {
+    transform: scale(0.4);
+    margin: auto;
+  }
+
   .checkbox {
     transform: scale(1.4);
     margin-right: 10px;

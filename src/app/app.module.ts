@@ -16,6 +16,7 @@ import {NavbarComponent} from "./views/components/navbar/navbar.component";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { LoginDialogComponent } from './views/components/login-dialog/login-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -24,21 +25,22 @@ import {MatDialogModule} from "@angular/material/dialog";
     HomeComponent,
     LoginDialogComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
-    NgOptimizedImage,
-    MatMenuModule,
-    MatGridListModule,
-    MatInputModule,
-    FormsModule,
-    HttpClientModule,
-    MatToolbarModule,
-    MatDialogModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatIconModule,
+        NgOptimizedImage,
+        MatMenuModule,
+        MatGridListModule,
+        MatInputModule,
+        FormsModule,
+        HttpClientModule,
+        MatToolbarModule,
+        MatDialogModule,
+        MatProgressSpinnerModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -4,19 +4,20 @@
     <p>Don't have an account? <a routerLink="/register">Register</a></p>
 
     <mat-form-field appearance="outline">
-      <input matInput placeholder="E-Mail" name="email" [(ngModel)]="form.username">
+      <input matInput placeholder="E-Mail" name="email" [(ngModel)]="form.username" required>
       <mat-icon matSuffix>person</mat-icon>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <input matInput placeholder="Password" name="password" [(ngModel)]="form.password">
+      <input matInput placeholder="Password" name="password" [(ngModel)]="form.password" required>
       <mat-icon matSuffix>key</mat-icon>
     </mat-form-field>
 
     <input class="checkbox" type="checkbox" checked>
     <mat-label>Remember me</mat-label>
 
-    <button mat-flat-button color="primary">Sign in</button>
+    <button  mat-flat-button color="primary" *ngIf="!isPending">Sign in</button>
+    <mat-spinner *ngIf="isPending" color="primary"></mat-spinner>
 
     <mat-label *ngIf="isFailed">
       <mat-icon>error_outline</mat-icon>

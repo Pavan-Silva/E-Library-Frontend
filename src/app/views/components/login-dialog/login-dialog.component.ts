@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MatDialogRef} from "@angular/material/dialog";
 import {AuthService} from "../../../services/auth/auth.service";
+import {TokenStorageService} from "../../../services/auth/token-storage.service";
 
 @Component({
   selector: 'app-login-dialog',
@@ -8,10 +9,13 @@ import {AuthService} from "../../../services/auth/auth.service";
   styleUrls: ['./login-dialog.component.scss'],
 })
 export class LoginDialogComponent {
-  constructor(public dialogRef: MatDialogRef<LoginDialogComponent>, private authService: AuthService) {}
+  constructor(public dialogRef: MatDialogRef<LoginDialogComponent>,
+              private authService: AuthService,
+              private tokenStorage: TokenStorageService) {}
 
   isSuccessful = false;
   isFailed = false;
+  isPending = false;
 
   form: any = {
     email: null,
@@ -21,12 +25,22 @@ export class LoginDialogComponent {
   onSubmit() {
     const {username , password} = this.form;
 
-    console.log(username, password);
+    this.isPending = true;
 
     this.authService.login(username, password).subscribe (
       {
-        next: response => console.log(response),
-        error: () => this.isFailed = true
+        next: response => {
+          //this.tokenStorage.saveToken(response.accessToken, response.refreshToken);
+          this.isSuccessful = true;
+          this.isFailed = false;
+          this.isPending = false;
+        },
+
+        error: () => {
+          this.isFailed = true;
+          this.isSuccessful = false;
+          this.isPending = false;
+        }
       }
     );
   }
